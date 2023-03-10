@@ -9,7 +9,7 @@ public class Main {
 	@Test
 	public void testAction() {
 		ApplicationContext spring = new ClassPathXmlApplicationContext("spring.xml");
-		UserAction ua1 = spring.getBean("UserAction", UserAction.class);
-		ua1.doRegister();
+		UserAction ua = spring.getBean("userAction", UserAction.class);
+		ua.doRegister();
 	}
 }
