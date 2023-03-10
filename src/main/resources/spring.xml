@@ -6,10 +6,12 @@
     <bean id="UserDaoImplForMySQL" class="me.ding.dao.impl.UserDaoImplForMySQL"/>
     <bean id="UserDaoImplForOracle" class="me.ding.dao.impl.UserDaoImplForOracle"/>
 
-    <bean id="User" class="me.ding.pojo.User"/>
-
     <bean id="UserServiceImpl" class="me.ding.service.impl.UserServiceImpl">
+        <property name="mySQLDao" ref="UserDaoImplForMySQL"/>
+        <property name="oracleDao" ref="UserDaoImplForOracle"/>
     </bean>
 
-    <bean id="UserAction" class="me.ding.web.UserAction"/>
+    <bean id="UserAction" class="me.ding.web.UserAction">
+        <property name="userService" ref="UserServiceImpl"/>
+    </bean>
 </beans>
