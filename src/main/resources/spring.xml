@@ -7,11 +7,12 @@
     <bean id="UserDaoImplForOracle" class="me.ding.dao.impl.UserDaoImplForOracle"/>
 
     <bean id="UserServiceImpl" class="me.ding.service.impl.UserServiceImpl">
-        <property name="mySQLDao" ref="UserDaoImplForMySQL"/>
-        <property name="oracleDao" ref="UserDaoImplForOracle"/>
+        <constructor-arg ref="UserDaoImplForMySQL"/>
+        <constructor-arg ref="UserDaoImplForOracle"/>
+
     </bean>
 
     <bean id="UserAction" class="me.ding.web.UserAction">
-        <property name="userService" ref="UserServiceImpl"/>
+        <constructor-arg ref="UserServiceImpl"/>
     </bean>
 </beans>

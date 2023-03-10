@@ -7,7 +7,7 @@ public class UserAction {
 
 	private UserService userService;
 
-	public void setUserService(UserService userService) {
+	public UserAction(UserService userService) {
 		this.userService = userService;
 	}
 

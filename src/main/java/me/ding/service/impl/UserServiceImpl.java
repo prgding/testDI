@@ -9,11 +9,8 @@ public class UserServiceImpl implements UserService {
 	private UserDao mySQLDao;
 	private UserDao oracleDao;
 
-	public void setMySQLDao(UserDao mySQLDao) {
+	public UserServiceImpl(UserDao mySQLDao, UserDao oracleDao) {
 		this.mySQLDao = mySQLDao;
-	}
-
-	public void setOracleDao(UserDao oracleDao) {
 		this.oracleDao = oracleDao;
 	}
 
